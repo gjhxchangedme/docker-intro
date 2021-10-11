@@ -1,1 +1,0 @@
-This is just an example configurations for creating docker containers
