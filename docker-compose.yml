@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  db: 
+    image: mysql:5.7
+    container_name: 'mysql57-hello-mysql'
+    command:   
+      --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3399:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql-volume:/var/lib/mysql
+    networks:
+      - default
+
+networks:
+  default:
+    name: proxy
